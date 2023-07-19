@@ -31,7 +31,8 @@ namespace UploadExcel.Models.ViewModels
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employe>(entity =>
+            modelBuilder.Entity<Employe>().HasNoKey();
+            modelBuilder.Entity<Employer>(entity =>
             {
                 entity.HasKey(e => e.Id)
                     .HasName("PK__Employe__A4D6BBFA03F620AB");
